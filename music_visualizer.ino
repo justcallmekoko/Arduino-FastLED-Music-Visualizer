@@ -9,7 +9,7 @@
 // as long as you adjust NUM_LEDS according to the amount of LEDs you are using
 
 // LED LIGHTING SETUP
-#define LED_PIN     5
+#define LED_PIN     6
 #define NUM_LEDS    250
 #define BRIGHTNESS  64
 #define LED_TYPE    WS2811
