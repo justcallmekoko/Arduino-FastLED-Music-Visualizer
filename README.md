@@ -55,3 +55,5 @@ There will be two ways to set this puppy up. I prefer the second way, but that c
 ![alt text](https://github.com/the-red-team/Arduino-FastLED-Music-Visualizer/blob/master/images/circuit.JPG "Circuit")
 
 ## Arduino UNO with Sparkfun Spectrum Shield Setup
+For this version of the music visualizer, you will need the [Sparkfun Spectrum Shield](https://www.amazon.com/gp/product/B00X0K30I6/ref=oh_aui_detailpage_o07_s00?ie=UTF8&psc=1)  
+I prefer this version because it allows you to split the audio signal into 7 seperate channels (bass, mids, treb). This is important for anyone who wants their music visualizer to respond only to bass like mine. The sparkfun spectrum shield is...a shield...so you can solder the stacking female/male header pins to it and attach it to your Arduino UNO.
