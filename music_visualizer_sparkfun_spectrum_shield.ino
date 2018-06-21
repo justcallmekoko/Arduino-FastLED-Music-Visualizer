@@ -11,7 +11,7 @@
 // This code uses the Sparkfun Spectrum Shield
 
 // LED LIGHTING SETUP
-#define LED_PIN     5
+#define LED_PIN     6
 #define NUM_LEDS    250
 #define BRIGHTNESS  64
 #define LED_TYPE    WS2811
