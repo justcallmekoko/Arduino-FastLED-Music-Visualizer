@@ -1,5 +1,9 @@
 # Arduino FastLED Music Visualizer
 An Arduino based music visualizer using the FastLED library and a strip of individually addressable LEDs.
+<p align="center">
+  <img width="200" height="300" src="https://github.com/the-red-team/Arduino-FastLED-Music-Visualizer/blob/master/images/visualizer.gif">
+</p>
+
 
 # Table Of Constituents
 - [Intro](#intro)
