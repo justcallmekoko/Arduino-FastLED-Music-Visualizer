@@ -49,13 +49,19 @@ I can't find a guide worth a shit on YouTube or Github. I saw many videos showin
 
 # Setup
 So this is how to setup the most "dank" music visualizer ever.  
-There will be two ways to set this puppy up. I prefer the second way, but that costs money and shit.
+There will be two ways to set this puppy up. I prefer the second way, but that costs money.
 
 ## Materials
 - [Arduino UNO](https://www.amazon.com/gp/product/B01N4LP86I/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1)
 - [WS2812b Individually Addressable LEDs](https://www.amazon.com/gp/product/B01CDTEJBG/ref=oh_aui_detailpage_o09_s00?ie=UTF8&psc=1)
 
 ## Standalone Arduino UNO Setup
+### Pins
+  - 5v - Connect to Vcc on LED strip
+  - GND - Connect to GND on LED strip
+  - A0 - Connect to the other end of the 3.5mm jack connected to your music source
+    - A0 must be pulled down with a resistor (shown in the picture below)
+  - 6 - Connect to DATA on LED strip
 ![alt text](https://github.com/the-red-team/Arduino-FastLED-Music-Visualizer/blob/master/images/circuit.JPG "Circuit")
 
 ## Arduino UNO with Sparkfun Spectrum Shield Setup
