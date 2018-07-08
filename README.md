@@ -10,7 +10,11 @@ An Arduino based music visualizer using the FastLED library and a strip of indiv
 - [Setup](#setup)
   - [Materials](#materials)
   - [Standalone Arduino UNO Setup](#standalone-arduino-uno-setup)
+    - [Code](#code)
+    - [Pins](#pins)
   - [Arduino UNO with Sparkfun Spectrum Shield Setup](#arduino-uno-with-sparkfun-spectrum-shield-setup)
+    - [Code](#code)
+    - [Pins](#pins)
 
 ## Intro
 Imagine this scenario. Does this not make you want to create your own music visualizer?
