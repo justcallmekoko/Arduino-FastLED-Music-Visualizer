@@ -74,7 +74,7 @@ For this version of the music visualizer, you will need the [Sparkfun Spectrum S
 I prefer this version because it allows you to split the audio signal into 7 seperate channels (bass, mids, treb). This is important for anyone who wants their music visualizer to respond only to bass like mine.
 
 ### Code
-  1. Open [this](https://github.com/the-red-team/Arduino-FastLED-Music-Visualizer/blob/master/music_visualizer.ino) code in your Arduino editor
+  1. Open [this](https://github.com/the-red-team/Arduino-FastLED-Music-Visualizer/blob/master/music_visualizer_sparkfun_spectrum_shield.ino) code in your Arduino editor
   2. Line 15, adjust `NUM_LEDS` to the number of LEDs you plan to use
   3. Upload to your Arduino UNO
   
