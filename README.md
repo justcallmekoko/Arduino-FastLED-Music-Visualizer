@@ -56,6 +56,9 @@ There will be two ways to set this puppy up. I prefer the second way, but that c
 - [WS2812b Individually Addressable LEDs](https://www.amazon.com/gp/product/B01CDTEJBG/ref=oh_aui_detailpage_o09_s00?ie=UTF8&psc=1)
 
 ## Standalone Arduino UNO Setup
+### Code
+  - Line 13, adjust `NUM_LEDS` to the number of LEDs you plan to use
+  
 ### Pins
   - 5v - Connect to Vcc on LED strip
   - GND - Connect to GND on LED strip
