@@ -1,6 +1,6 @@
 #include <FastLED.h>
 
-// Arduino Music Visualizer 0.2
+// Arduino Music Visualizer 0.3
 
 // This music visualizer works off of analog input from a 3.5mm headphone jack
 // Just touch jumper wire from A0 to tip of 3.5mm headphone jack
@@ -12,7 +12,7 @@
 
 // LED LIGHTING SETUP
 #define LED_PIN     6
-#define NUM_LEDS    250
+#define NUM_LEDS    100 // 250
 #define BRIGHTNESS  64
 #define LED_TYPE    WS2811
 #define COLOR_ORDER GRB
@@ -32,6 +32,7 @@ int audio_input = 0;
 int freq = 0;
 
 // STANDARD VISUALIZER VARIABLES
+int midway = NUM_LEDS / 2; // CENTER MARK FROM DOUBLE LEVEL VISUALIZER
 int loop_max = 0;
 int k = 255; // COLOR WHEEL POSITION
 int decay = 0; // HOW MANY MS BEFORE ONE LIGHT DECAY
@@ -92,7 +93,7 @@ CRGB Scroll(int pos) {
 // THE ORIGINAL FUNCTION WENT BACKWARDS
 // THE MODIFIED FUNCTION SENDS WAVES OUT FROM FIRST LED
 // https://github.com/NeverPlayLegit/Rainbow-Fader-FastLED/blob/master/rainbow.ino
-void rainbow()
+void singleRainbow()
 {
   for(int i = NUM_LEDS - 1; i >= 0; i--) {
     if (i < react)
@@ -101,6 +102,21 @@ void rainbow()
       leds[i] = CRGB(0, 0, 0);      
   }
   FastLED.show(); 
+}
+
+// FUNCTION TO MIRRORED VISUALIZER
+void doubleRainbow()
+{
+  for(int i = NUM_LEDS - 1; i >= midway; i--) {
+    if (i < react + midway) {
+      leds[i] = Scroll((i * 256 / 50 + k) % 256);
+      leds[(midway - i) + midway] = Scroll((i * 256 / 50 + k) % 256);
+    }
+    else
+      leds[i] = CRGB(0, 0, 0);
+      leds[midway - react] = CRGB(0, 0, 0);
+  }
+  FastLED.show();
 }
 
 void readMSGEQ7()
@@ -118,11 +134,8 @@ void readMSGEQ7()
   }
 }
 
-void loop()
+void convertSingle()
 {
-  //int audio_input = analogRead(audio1); // ADD x2 HERE FOR MORE SENSITIVITY  
-  readMSGEQ7();
-
   if (left[freq] > right[freq])
     audio_input = left[freq];
   else
@@ -139,8 +152,36 @@ void loop()
     Serial.print(" -> ");
     Serial.println(pre_react);
   }
+}
 
-  rainbow(); // APPLY COLOR
+void convertDouble()
+{
+  if (left[freq] > right[freq])
+    audio_input = left[freq];
+  else
+    audio_input = right[freq];
+
+  if (audio_input > 80)
+  {
+    pre_react = ((long)midway * (long)audio_input) / 1023L; // TRANSLATE AUDIO LEVEL TO NUMBER OF LEDs
+
+    if (pre_react > react) // ONLY ADJUST LEVEL OF LED IF LEVEL HIGHER THAN CURRENT LEVEL
+      react = pre_react;
+
+    Serial.print(audio_input);
+    Serial.print(" -> ");
+    Serial.println(pre_react);
+  }
+}
+
+// FUNCTION TO VISUALIZE WITH A SINGLE LEVEL
+void singleLevel()
+{
+  readMSGEQ7();
+
+  convertSingle();
+
+  singleRainbow(); // APPLY COLOR
 
   k = k - wheel_speed; // SPEED OF COLOR WHEEL
   if (k < 0) // RESET COLOR WHEEL
@@ -154,5 +195,34 @@ void loop()
     if (react > 0)
       react--;
   }
+}
+
+// FUNCTION TO VISUALIZE WITH MIRRORED LEVELS
+void doubleLevel()
+{
+  readMSGEQ7();
+
+  convertDouble();
+
+  doubleRainbow();
+
+  k = k - wheel_speed; // SPEED OF COLOR WHEEL
+  if (k < 0) // RESET COLOR WHEEL
+    k = 255;
+
+  // REMOVE LEDs
+  decay_check++;
+  if (decay_check > decay)
+  {
+    decay_check = 0;
+    if (react > 0)
+      react--;
+  }
+}
+
+void loop()
+{  
+  //singleLevel();
+  doubleLevel();
   //delay(1);
 }
