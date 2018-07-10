@@ -2,6 +2,13 @@
 An Arduino based music visualizer using the FastLED library and a strip of individually addressable LEDs.
 <p align="center">
   <img width="450" height="300" src="https://github.com/the-red-team/Arduino-FastLED-Music-Visualizer/blob/master/images/mirrored_visualizer.gif">
+  <br>
+  <a href="https://www.instagram.com/the.red.team4">Instagram</a>
+ - <a href="https://www.youtube.com/channel/UCQdi3MDHHMm7u3cMkEY329Q">YouTube</a>
+ - <a href="https://208.68.37.54">Website</a>
+  <br>
+  <br>
+  <b>Like my content? Show your support by subscribing to my channel and following my page.</b>
 </p>
 
 
