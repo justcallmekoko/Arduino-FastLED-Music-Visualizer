@@ -23,7 +23,7 @@
     - [Pins](#pins)
 
 ## Intro
-An Arduino based music visualizer using the FastLED library and a strip of individually addressable LEDs.
+An Arduino based music visualizer using the FastLED library and a strip of individually addressable LEDs.  
 Imagine this scenario. Does this not make you want to create your own music visualizer?
 
 `> want to be super cool 1337 h4x0r 420 cuck`  
