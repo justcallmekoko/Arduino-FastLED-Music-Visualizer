@@ -14,6 +14,7 @@
 # Table Of Constituents
 - [Intro](#intro)
 - [Setup](#setup)
+  - [Video Tutorial](https://www.youtube.com/watch?v=Af74A0Tx-wA)
   - [Materials](#materials)
   - [Standalone Arduino UNO Setup](#standalone-arduino-uno-setup)
     - [Code](#code)
@@ -61,6 +62,7 @@ I can't find a guide worth a shit on YouTube or Github. I saw many videos showin
 # Setup
 So this is how to setup the most "dank" music visualizer ever.  
 There will be two ways to set this puppy up. I prefer the second way, but that costs money.
+There is a full video tutorial [here](https://www.youtube.com/watch?v=Af74A0Tx-wA)
 
 ## Materials
 - [Arduino UNO](https://www.amazon.com/gp/product/B01N4LP86I/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1)
@@ -86,9 +88,10 @@ For this version of the music visualizer, you will need the [Sparkfun Spectrum S
 I prefer this version because it allows you to split the audio signal into 7 seperate channels (bass, mids, treb). This is important for anyone who wants their music visualizer to respond only to bass like mine.
 
 ### Code
-  1. Open [this](https://github.com/the-red-team/Arduino-FastLED-Music-Visualizer/blob/master/music_visualizer_sparkfun_spectrum_shield.ino) code in your Arduino editor
+  1. Open [this](https://github.com/the-red-team/Arduino-FastLED-Music-Visualizer/blob/master/music_visualizer_sparkfun_spectrum_shield.ino) code in your Arduino IDE
   2. Line 15, adjust `NUM_LEDS` to the number of LEDs you plan to use
-  3. Upload to your Arduino UNO
+  3. Install the FastLED library under "Manage Libraries"
+  4. Upload to your Arduino UNO
   
 ### Pins
   - 5v - Connect to Vcc on LED strip
