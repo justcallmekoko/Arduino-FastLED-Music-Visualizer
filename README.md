@@ -27,14 +27,7 @@
 An Arduino based music visualizer using the FastLED library and a strip of individually addressable LEDs.  
 Imagine this scenario. Does this not make you want to create your own music visualizer?
 
-`> want to be super cool 1337 h4x0r 420 cuck`  
-`> make led music visualizer from `[`the.red.team`](https://www.github.com/the-red-team)  
-`> get it working perfectly`  
-`> decide to use the shrooms my friend gave me for the first time and listen to music while watching the lights`  
-`> nothing`  
-`> nothing`  
-`> need more shrooms but ate them all`  
-`> leave house on scavenging mission in search of more fungal friends`  
+
 `> crawled inside of the neighbor's dog`  
 `> dog walks inside of neighbor house`  
 `> broke into neighbor house by being inside of dog`  
