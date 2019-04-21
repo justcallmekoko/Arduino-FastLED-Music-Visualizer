@@ -12,7 +12,7 @@
 
 // LED LIGHTING SETUP
 #define LED_PIN     6
-#define NUM_LEDS    100 // 250
+#define NUM_LEDS    200 // 250
 #define BRIGHTNESS  64
 #define LED_TYPE    WS2811
 #define COLOR_ORDER GRB
@@ -72,6 +72,7 @@ void setup()
 // FUNCTION TO GENERATE COLOR BASED ON VIRTUAL WHEEL
 // https://github.com/NeverPlayLegit/Rainbow-Fader-FastLED/blob/master/rainbow.ino
 CRGB Scroll(int pos) {
+  pos = abs(pos);
   CRGB color (0,0,0);
   if(pos < 85) {
     color.g = 0;
@@ -86,6 +87,16 @@ CRGB Scroll(int pos) {
     color.g = 255 - color.b;
     color.r = 1;
   }
+  /*
+  Serial.print(pos);
+  Serial.print(" -> ");
+  Serial.print("r: ");
+  Serial.print(color.r);
+  Serial.print("    g: ");
+  Serial.print(color.g);
+  Serial.print("    b: ");
+  Serial.println(color.b);
+  */
   return color;
 }
 
@@ -109,7 +120,11 @@ void doubleRainbow()
 {
   for(int i = NUM_LEDS - 1; i >= midway; i--) {
     if (i < react + midway) {
+      //Serial.print(i);
+      //Serial.print(" -> ");
       leds[i] = Scroll((i * 256 / 50 + k) % 256);
+      //Serial.print(i);
+      //Serial.print(" -> ");
       leds[(midway - i) + midway] = Scroll((i * 256 / 50 + k) % 256);
     }
     else
