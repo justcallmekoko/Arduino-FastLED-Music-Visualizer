@@ -90,3 +90,4 @@ I prefer this version because it allows you to split the audio signal into 7 sep
   - 5v - Connect to Vcc on LED strip
   - GND - Connect to GND on LED strip
   - 6 - Connect to DATA on LED strip
+##
