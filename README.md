@@ -10,6 +10,13 @@
   <b>Like my content? Show your support by subscribing to my channel and following my page.</b>
 </p>
 
+Catch my live stream on [Twitch](https://www.twitch.tv/willstunforfood) where I play games, have just chatting sessions to talk tech, and just generally be an ordinary person who can't figure out how to make proper life decisions.
+  
+  Stream Schedule:  
+    Mon: 1800 - 2000 EST  
+    Wed: 1800 - 2000 EST  
+    Sun: 1200 - 1400 EST  
+
 
 # Table Of Constituents
 - [Intro](#intro)
